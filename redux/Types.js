@@ -1,0 +1,7 @@
+export const Types = {
+    ID: 'ID',
+    GENRE_OPTION: 'GENRE_OPTION',
+    SEARCH: 'SEARCH',
+    GET_RANDOM_BACKGRND: 'GET_RANDOM_BACKGRND',
+    LOADING: 'LOADING',
+}

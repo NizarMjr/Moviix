@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,10 +8,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'pink': '#da2f68',
+        'clrBlack': '#04152d'
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'Landing': 'url("../public/assets/landing.jpg")',
+      },
+      backgroundColor: {
+        'bg-shadow': 'rgba(0,0,0,.25)',
+        'bg-black': '#04152d',
+        'bg-black2': '#020c1b',
+        'black-light': '#173d77',
+        'pink': '#da2f68',
       },
     },
   },

@@ -1,0 +1,32 @@
+export const optionsMovie = [{ value: '28', label: 'Action' },
+{ value: '12', label: 'Adventure' },
+{ value: '16', label: 'Animation' },
+{ value: '35', label: 'Comedy' },
+{ value: '80', label: 'Crime' },
+{ value: '99', label: 'Documentary' },
+{ value: '18', label: 'Drama' },
+{ value: '10751', label: 'Family' },
+{ value: '14', label: 'Fantasy' },
+{ value: '36', label: 'History' },
+{ value: '27', label: 'Horror' },
+{ value: '10402', label: 'Music' },
+{ value: '9648', label: 'Mystery' },
+{ value: '10749', label: 'Romance' },
+{ value: '878', label: 'Sience Fiction' },
+{ value: '10770', label: 'TV Movie' },
+{ value: '53', label: 'Thriller' },
+{ value: '10752', label: 'War' },
+{ value: '37', label: 'Western' }];
+
+export const sortbyData = [
+    { value: "popularity.desc", label: "Popularity Descending" },
+    { value: "popularity.asc", label: "Popularity Ascending" },
+    { value: "vote_average.desc", label: "Rating Descending" },
+    { value: "vote_average.asc", label: "Rating Ascending" },
+    {
+        value: "primary_release_date.desc",
+        label: "Release Date Descending",
+    },
+    { value: "primary_release_date.asc", label: "Release Date Ascending" },
+    { value: "original_title.asc", label: "Title (A-Z)" },
+];
