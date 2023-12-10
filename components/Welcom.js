@@ -35,7 +35,7 @@ const Welcom = () => {
             <div className="sm:px-16 px-8 text-center text-white w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
                 <h1 className="sm:text-7xl text-4xl font-bold">Welcome.</h1>
                 <p className="sm:text-2xl text-xl font-bold my-8">Millions of movies, TV shows and people to discover. Explore now.</p>
-                <form className="flex text-black w-full">
+                <form className="flex text-black mt-8">
                     <input className="flex-1 px-8 py-4 rounded-tl-full rounded-bl-full" type="text" placeholder="Search for movie or tv show" value={result} onChange={(e) => setResult(e.target.value)} />
                     <Link href="/search"><button onClick={() => searching()} className="rounded-tr-full text-white rounded-br-full bg-gradient-to-r from-purple-500 to-pink-500 p-4 font-500">Search</button></Link>
                 </form>

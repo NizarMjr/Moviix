@@ -32,7 +32,7 @@ const Navbar = ({ showNav, setShowNav }) => {
             <ul className="w-fit-content sm:flex justify-between items-center hidden font-bold text-white">
                 <li className='mx-4 cursor-pointer hover:text-pink'><Link onClick={() => dispatch(setGenreOption('movie'))} href="/movie">Movies</Link></li>
                 <li className='mx-4 cursor-pointer hover:text-pink'><Link onClick={() => dispatch(setGenreOption('tv'))} href="/tv">TV Shows</Link></li>
-                <li className='cursor-pointer hover:text-pink'>{openSearch ? <Search openSearch={openSearch} setOpenSearch={setOpenSearch} /> : <BsSearch onClick={() => showSearch()} />}</li>
+                <li className='cursor-pointer hover:text-pink text-white'>{openSearch ? <Search openSearch={openSearch} setOpenSearch={setOpenSearch} /> : <BsSearch onClick={() => showSearch()} />}</li>
             </ul>
             <ul className='sm:hidden flex justify-between items-center w-2/3'>
                 {showNav ? <li><AiOutlineClose onClick={() => closeBurgerNav()} className='text-2xl mr-4 cursor-pointer' /></li>
