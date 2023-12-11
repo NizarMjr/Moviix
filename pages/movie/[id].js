@@ -50,7 +50,7 @@ const Details = () => {
                     <div className="">
                         <h2 className="text-3xl">{detail.title}</h2>
                         <p className="my-4 opacity-50 sm:text-xl">{detail.tagline}</p>
-                        <div className="flex items-center">
+                        <div className="flex items-center flex-wrap">
                             {detail.genres?.map((g) => {
                                 return (
                                     <span className="mr-4 bg-pink font-bold text-white rounded text-sm w-fit p-1 my-4 whitespace-nowrap" key={g.name}>{g.name}</span>

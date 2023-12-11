@@ -20,7 +20,6 @@ const Search = () => {
             setData(data.results);
         }
         fetchSearch()
-        console.log(dataSearched);
     }, [search])
 
     const searching = (id) => {

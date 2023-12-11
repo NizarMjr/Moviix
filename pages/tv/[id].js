@@ -38,13 +38,13 @@ const Details = () => {
             <Navbar showNav={showNav} setShowNav={setShowNav} />
             <BurgerBar showNav={showNav} setShowNav={setShowNav} />
             <div className="container">
-                <div className="grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] grid-cols-[repeat(auto-fill,minmax(auto,auto)) gap-8">
-                    <img className="w-full absolute top-0 left-0 opacity-10 object-cover" src={`https://image.tmdb.org/t/p/original${background}`} alt="image" />
+                <div className="grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-4">
+                    <img className="w-full h-full absolute top-0 left-0 opacity-10 object-cover" src={`https://image.tmdb.org/t/p/original${background}`} alt="image" />
                     <img className="rounded-xl sm:h-[500px]" src={detail.backdrop_path ? `https://image.tmdb.org/t/p/original${detail.backdrop_path}` : '../../assets/no-poster.png'} alt={detail.title} />
                     <div className="">
                         <h2 className="text-3xl">{detail.name}</h2>
                         <p className="my-4 opacity-50 sm:text-xl">{detail.tagline}</p>
-                        <div className="flex items-center">
+                        <div className="flex items-center flex-wrap">
                             {detail.genres?.map((g) => {
                                 return (
                                     <span className="mr-4 bg-pink text-white rounded w-fit p-1 my-4 whitespace-nowrap" key={g}>{g.name}</span>
@@ -62,7 +62,7 @@ const Details = () => {
                         <p className="mb-8">{detail.overview}</p>
                         <div className="flex justify-between items-center border-b border-slate-300 pb-4">
                             <p className="flex flex-col"><span className="font-bold">Status: </span> <span>{detail.status}</span></p>
-                            <p className="flex flex-col"><span className="font-bold">Release Date: </span> <span>{detail.release_date}</span></p>
+                            {/* <p className="flex flex-col"><span className="font-bold">Release Date: </span> <span>{detail.release_date}</span></p> */}
                         </div>
                         <div>
                         </div>
