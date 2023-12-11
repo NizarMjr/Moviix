@@ -45,7 +45,7 @@ const Details = () => {
             <BurgerBar showNav={showNav} setShowNav={setShowNav} />
             <div className="container">
                 <img className="w-full h-full absolute top-0 left-0 opacity-10 object-cover" src={`https://image.tmdb.org/t/p/original${background}`} alt="image" />
-                <div className="grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-4">
+                <div className="grid md:grid-cols-[400px,1fr] gap-4">
                     <img className="rounded-xl sm:h-[500px]" src={detail.poster_path ? `https://image.tmdb.org/t/p/original/${detail.poster_path}` : '../../assets/no-poster.png'} alt={detail.title} />
                     <div className="">
                         <h2 className="text-3xl">{detail.title}</h2>
