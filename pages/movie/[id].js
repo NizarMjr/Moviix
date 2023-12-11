@@ -19,20 +19,17 @@ const Details = () => {
     const [videos, setVideos] = useState([]);
     const [trailerKey, setTrailerKey] = useState('');
     const dispatch = useDispatch();
-    //SAVE DATA INTO LOCALSTORAGE
 
     useEffect(() => {
         localStorage.getItem('ID') && dispatch(setID(localStorage.getItem('ID')))
-    }, [ID])
 
-    useEffect(() => {
         const fetchDetail = async () => {
-            const resp = await fetch(`https://api.themoviedb.org/3/movie/${ID}?api_key=8dd167329501a317421a5048258e75f8`);
+            const resp = await fetch(`https://api.themoviedb.org/3/movie/${ID ? ID : localStorage.getItem('ID')}?api_key=8dd167329501a317421a5048258e75f8`);
             const data = await resp.json();
             setDetail(data);
             setBackground(data.backdrop_path)
 
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${ID}/videos?api_key=8dd167329501a317421a5048258e75f8`)
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${ID ? ID : localStorage.getItem('ID')}/videos?api_key=8dd167329501a317421a5048258e75f8`)
             const trailerData = await response.json();
 
             setVideos(trailerData.results)

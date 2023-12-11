@@ -15,6 +15,7 @@ const Welcom = () => {
     const randID = useSelector(state => state.getRandomBackgnrd);
     const searching = () => {
         dispatch(setSearch(result))
+        localStorage.setItem('search', result)
     }
 
     useEffect(() => {

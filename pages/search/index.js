@@ -15,7 +15,7 @@ const Search = () => {
 
     useEffect(() => {
         const fetchSearch = async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/search/multi?query=${search}&api_key=8dd167329501a317421a5048258e75f8`)
+            const response = await fetch(`https://api.themoviedb.org/3/search/multi?query=${search ? search : localStorage.getItem('search')}&api_key=8dd167329501a317421a5048258e75f8`)
             const data = await response.json();
             setData(data.results);
         }

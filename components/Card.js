@@ -1,12 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-
 const { default: CircleRating } = require("./CircleRating")
 const { default: Genres } = require("./Genres")
 
 const Card = ({ ele, withGenre }) => {
-    const ID = useSelector(state => state.setID);
+
     const setItemToLocalStorage = () => {
-        localStorage.setItem('ID', ID);
+        localStorage.setItem('ID', ele.id);
     }
     return (
         <article onClick={() => setItemToLocalStorage()} className="cursor-pointer transition hover:opacity-50 rounded">

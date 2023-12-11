@@ -1,6 +1,6 @@
 import CircleRating from "@/components/CircleRating";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "@/components/Navbar";
 import BurgerBar from "@/components/BurgerBar";
 import Similar from "@/components/Similar";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Cast from "@/components/Cast";
 import Videos from "@/components/Videos";
 import { PlayIcon } from "@/components/PlayIcon";
+import { setID } from "@/redux/Actions";
 
 const Details = () => {
     const ID = useSelector(state => state.setID);
@@ -17,15 +18,18 @@ const Details = () => {
     const [background, setBackground] = useState('');
     const [videos, setVideos] = useState([]);
     const [trailerKey, setTrailerKey] = useState('');
+    const dispatch = useDispatch();
 
     useEffect(() => {
+        localStorage.getItem('ID') && dispatch(setID(localStorage.getItem('ID')))
+
         const fetchDetail = async () => {
-            const resp = await fetch(`https://api.themoviedb.org/3/tv/${ID}?api_key=8dd167329501a317421a5048258e75f8`);
+            const resp = await fetch(`https://api.themoviedb.org/3/tv/${ID ? ID : localStorage.getItem('ID')}?api_key=8dd167329501a317421a5048258e75f8`);
             const data = await resp.json();
             setDetail(data);
             setBackground(data.backdrop_path)
 
-            const response = await fetch(`https://api.themoviedb.org/3/tv/${ID}/videos?api_key=8dd167329501a317421a5048258e75f8`)
+            const response = await fetch(`https://api.themoviedb.org/3/tv/${ID ? ID : localStorage.getItem('ID')}/videos?api_key=8dd167329501a317421a5048258e75f8`)
             const trailerData = await response.json();
 
             setVideos(trailerData.results)

@@ -12,7 +12,6 @@ import { useDispatch } from "react-redux";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
-    const [data, setData] = useState([]);
     const [pages, setPages] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [filterWithSort, setFilterWithSort] = useState('popularity.desc');

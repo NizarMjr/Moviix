@@ -12,6 +12,7 @@ const Search = ({ openSearch, setOpenSearch }) => {
 
     const searching = () => {
         dispatch(setSearch(result))
+        localStorage.setItem('search', result);
     }
     const closeSearch = () => {
         setOpenSearch(false);
