@@ -1,17 +1,15 @@
-import { setLoading } from "@/redux/Actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const { default: CircleRating } = require("./CircleRating")
 const { default: Genres } = require("./Genres")
 
 const Card = ({ ele, withGenre }) => {
-    const dispatch = useDispatch();
-
-    const getDetail = () => {
-        dispatch(setLoading(true))
+    const ID = useSelector(state => state.setID);
+    const setItemToLocalStorage = () => {
+        localStorage.setItem('ID', ID);
     }
     return (
-        <article onClick={() => getDetail()} className="cursor-pointer transition hover:opacity-50 rounded">
+        <article onClick={() => setItemToLocalStorage()} className="cursor-pointer transition hover:opacity-50 rounded">
             <div className="">
                 <div className="relative mb-4">
                     <img className="rounded" src={ele.poster_path ? `https://image.tmdb.org/t/p/w500${ele.poster_path}` : '../../assets/no-poster.png'} />

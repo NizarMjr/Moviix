@@ -6,6 +6,5 @@ const reducer = combineReducers({
     setGenreOption: reducerGenreOption,
     setSearch: reducerSearch,
     getRandomBackgnrd: reducerRandomBackground,
-    toggleLoading: reducerLoading,
 })
 export default reducer;

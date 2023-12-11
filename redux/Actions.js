@@ -23,9 +23,3 @@ export const getRandomBackgrnd = () => {
         type: Types.GET_RANDOM_BACKGRND,
     }
 }
-export const setLoading = (payload) => {
-    return {
-        type: Types.LOADING,
-        payload: payload,
-    }
-}

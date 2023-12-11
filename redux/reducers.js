@@ -10,7 +10,6 @@ const randomBckg = ['6', '2546', '278', '12445', '10753',
 
 const random = randomBckg[Math.floor(Math.random() * randomBckg.length)];
 
-const loading = false;
 
 export const reducerRandomBackground = (state = random, { type }) => {
     switch (type) {
@@ -41,16 +40,6 @@ export const reducerGenreOption = (state = option, { type, payload }) => {
 export const reducerSearch = (state = search, { type, payload }) => {
     switch (type) {
         case Types.SEARCH: {
-            state = payload;
-            return state;
-        }
-        default: return state;
-    }
-}
-
-export const reducerLoading = (state = loading, { type, payload }) => {
-    switch (type) {
-        case Types.LOADING: {
             state = payload;
             return state;
         }

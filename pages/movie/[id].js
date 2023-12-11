@@ -1,6 +1,6 @@
 import CircleRating from "@/components/CircleRating";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "@/components/Navbar";
 import BurgerBar from "@/components/BurgerBar";
 import Similar from "@/components/Similar";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Cast from "@/components/Cast";
 import Videos from "@/components/Videos";
 import { PlayIcon } from "@/components/PlayIcon";
+import { setID } from "@/redux/Actions";
 
 const Details = () => {
     const ID = useSelector(state => state.setID);
@@ -17,6 +18,12 @@ const Details = () => {
     const [background, setBackground] = useState('');
     const [videos, setVideos] = useState([]);
     const [trailerKey, setTrailerKey] = useState('');
+    const dispatch = useDispatch();
+    //SAVE DATA INTO LOCALSTORAGE
+
+    useEffect(() => {
+        localStorage.getItem('ID') && dispatch(setID(localStorage.getItem('ID')))
+    }, [ID])
 
     useEffect(() => {
         const fetchDetail = async () => {

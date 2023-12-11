@@ -18,6 +18,7 @@ const Similar = ({ type }) => {
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/${type}/${ID}/similar?api_key=8dd167329501a317421a5048258e75f8`).then(res => setData(res.data.results)).catch(err => console.log(err.message));
     }, [ID])
+
     return data.length !== 0 && <main className="container " >
         <h3 className="sm:text-3xl text-xl mb-4">Similar {type}</h3>
         <Swiper className="mySwiper"
